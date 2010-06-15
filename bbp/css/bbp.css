@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+h1{ font-weight: bolder;font: 20px Verdana, Helvetica, sans-serif; background-color: #fff; margin: 0 auto; line-height: 1.4em; overflow: auto; width: 100%	;text-decoration: underline; }
+h2{ font-weight: bolder;font: 17px Verdana, Helvetica, sans-serif; background-color: #fff; margin: 0 auto; line-height: 1.4em; overflow: auto; width: 100%	;text-decoration: underline; }
+h3{ font-weight: bolder;font: 16px Verdana, Helvetica, sans-serif; background-color: #fff; margin: 0 auto; line-height: 1.4em; overflow: auto; width: 100%	;text-decoration: underline; }
+h4{ font-weight: bolder;font: 15px Verdana, Helvetica, sans-serif; background-color: #fff; margin: 0 auto; line-height: 1.4em; overflow: auto; width: 100%	;text-decoration: underline; }
+h5{ font-weight: bolder;font: 14px Verdana, Helvetica, sans-serif; background-color: #fff; margin: 0 auto; line-height: 1.4em; overflow: auto; width: 100%	;text-decoration: underline; }
+p{ font: 12px Verdana, Helvetica, sans-serif; background-color: #fff; margin: 0 auto; line-height: 1.4em; overflow: auto; width: 100%	; }
+a img {border: none;}
+a{ font: 12px Verdana, Helvetica, sans-serif; background-color: #eee; margin: 0 auto; line-height: 1.4em; overflow: auto; width: 100%;text-decoration: none; }

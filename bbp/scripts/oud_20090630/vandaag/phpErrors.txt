@@ -1,0 +1,1 @@
+[23-Jun-2009 23:24:05] PHP Warning:  PHP Startup: Unable to load dynamic library './php_sockets.dll' - (null) in Unknown on line 0

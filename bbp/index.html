@@ -1,0 +1,106 @@
+<html>
+<head>
+	<title>PHP Arduino Beer Bottle Plotter Project</title>
+    <link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/bbp.css" type="text/css" media="screen" />
+    
+    <script src="js/prototype.js" type="text/javascript"></script>
+    <script src="js/scriptaculous.js?load=effects,builder" type="text/javascript"></script>
+    <script src="js/lightbox.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        body{ color: #333; font: 13px 'Lucida Grande', Verdana, sans-serif; }
+    </style>
+</head>
+<body>
+
+<h1>Beer Bottle Plotter</h1>
+
+<h2>Why?</h2>
+<p>Since a year I have be brewing my own beer at home. And till now I put my beer in some anonymous bottles, mostly old champagne bottles.</p>
+<p>So I wanted some kind of etiquette for my bottles. Tried some print stuff, printer stuff, hand made stuff. Nothing was what I wanted.</p>
+<p>One day I got this wonderfull idea. I wanted to make a machine that would etch the bottles. 
+I have some experience with <a href="http://www.arduino.cc">Arduino</a>, 
+know how to program in PHP and have a small knowledge of electronics.
+So putting all this together could result in such a plotter machine. 
+Somewhere along the road the idea changed to drawing something on the bottle instead of etching it.</p>
+<h2>How?</h2>
+<p>The whole contruction of the Beer Bottle Plotter is very simple. 
+I used <ul>
+    <li>an old scanner I had in my shed</li>
+    <li>an old cd-drive from a computer</li>
+    <li> an <a href="http://www.arduino.cc">Arduino</a> I had been playing with</li>
+    <li>bought a motorshield and stepper motors from <a href="http://www.adafruit.com">AdaFruit</a></li>
+    <li>my MacBook wiht osX 10.5 for the programming</li>
+    </ul>
+</p>
+<p>The <a href="http://www.arduino.cc">Arduino</a> is simple to program for anyone with a little programming experience.
+There are libraries available for the stepper motors and for the servo 
+and tons of example on the <a href="http://arduino.cc/en/Tutorial/HomePage">Arduino site</a>. </p>
+<p>Sending commands to the <a href="http://www.arduino.cc">Arduino</a> from <a href="http://www.php.net">PHP</a> was some more trouble. 
+I got this working by using <a href="http://arduino.cc/en/Main/Software">SerProxy</a> together with PHP 
+and by putting a 47 ohm resistor between the 3v and the reset entry of the Arduino to prevent it from resetting with every command I send.
+More info can be found on <a href="http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1218903707/39">this forum.</a></p>
+<p>Next problem was to define what to draw. 
+I solved this by modifying some <a href="http://www.processing.org">Processing</a> scripts that will make a file with the movements of my mouse. 
+PHP reads this file, calculates the changes and the directions and sends it to the Arduino over the SerProxy.
+The only thing the Arduino has to do is capture the command and give the different motors the right commands to turn.</p>
+<p> I'll put links to all the source files I used when the whole thing works the way it should (till now it print the whole thing mirrored ;-)</p> 
+<h2>Questions</h2>
+<p>Feel free to send me any comment or questions <a href="mailto:info@noisejunk.eu">info@noisejunk.eu</a> and please visit the rest of the <a href="http://noisejunk.eu">site</a><br /></p>
+<h2>The Proof</h2>
+<h3>Video's</h3>
+<h4>The x-direction test</h4>
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/b9TK6wQFrIs&hl=nl&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/b9TK6wQFrIs&hl=nl&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object><br />
+<h4>The rotation test</h4>
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/T3SMsdR3YBY&hl=nl&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/T3SMsdR3YBY&hl=nl&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object><br />
+<h4>The marker up/down test</h4>
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/oTHTOl0RUa4&hl=nl&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/oTHTOl0RUa4&hl=nl&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object><br />
+<h4>Testing the movements using the interface</h4>
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/mfIFIiiPssk&hl=nl&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/mfIFIiiPssk&hl=nl&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object><br />
+<h4>Test reading a file with coordinates and draw them</h4>
+<p>If you want to see what it should have looked like see the <a href="http://noisejunk.eu/bbp/Processing/LoadFile1/applet/">Processing applet</a></p>
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/b4oGkKVnC9k&hl=nl&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/b4oGkKVnC9k&hl=nl&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object><br />
+
+<a name="images"></a>
+<h3>Images</h3>
+<h4>Contruction</h4>
+<a href="assets/constructionNoBottleDetailNeckSupport.jpg" rel="lightbox[contruction]">
+<img src="assets/constructionNoBottleDetailNeckSupportSmall.png" alt="constructionNoBottleDetailNeckSupport" />
+</a>
+<a href="assets/constructionNoBottleDetailNeckSupportTop.jpg" rel="lightbox[contruction]">
+<img src="assets/constructionNoBottleDetailNeckSupportTopSmall.png" alt="constructionNoBottleDetailNeckSupportTop" />
+</a>
+<a href="assets/constructionNoBottleDetailRotationTop.jpg" rel="lightbox[contruction]">
+<img src="assets/constructionNoBottleDetailRotationTopSmall.png" alt="constructionNoBottleDetailRotationTop" />
+</a>
+<a href="assets/constructionNoBottleTop2.jpg" rel="lightbox[contruction]">
+<img src="assets/constructionNoBottleTop2Small.png" alt="constructionNoBottleTop2" />
+</a>
+<a href="assets/constructionNoBottleTop.jpg" rel="lightbox[contruction]">
+<img src="assets/constructionNoBottleTopSmall.png" alt="constructionNoBottleTop" />
+</a>
+<a href="assets/constructionWithBottleFront.jpg" rel="lightbox[contruction]">
+<img src="assets/constructionWithBottleFrontSmall.png" alt="constructionWithBottleFront" />
+</a>
+<a href="assets/constructionWithBottleTop2.jpg" rel="lightbox[contruction]">
+<img src="assets/constructionWithBottleTop2Small.png" alt="constructionWithBottleTop2" />
+</a>
+<a href="assets/constructionWithBottleTop.jpg" rel="lightbox[contruction]">
+<img src="assets/constructionWithBottleTopSmall.png" alt="constructionWithBottleTop" />
+</a>
+
+<h4>Handmade example</h4>
+<a href="assets/exampleBottlesHandDrawn.jpg" rel="lightbox[handmadeexample]">
+<img src="assets/exampleBottlesHandDrawnSmall.png" alt="exampleBottlesHandDrawn" />
+</a>
+<h4>Test</h4>
+
+<a href="assets/testMirrorFront.JPG" rel="lightbox[test]">
+<img src="assets/testMirrorFrontSmall.png" alt="testMirrorFront" />
+</a>
+<a href="assets/testMirrorBack.JPG" rel="lightbox[test]">
+<img src="assets/testMirrorBackSmall.png" alt="testMirrorBack" />
+</a>
+</body>
+</html>
